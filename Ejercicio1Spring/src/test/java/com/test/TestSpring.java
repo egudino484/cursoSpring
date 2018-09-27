@@ -7,6 +7,11 @@ package com.test;
  */
 
 import com.spring.BeanSpring;
+import com.spring.Persona;
+import com.spring.listas.SLAcademia;
+import com.spring.listas.SLCiudad;
+import com.spring.objetos.Profesor;
+import java.util.Iterator;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -49,8 +54,29 @@ public class TestSpring {
      public void testSpringFramework() {
          ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/com/configuracion/AplicationContext.xml");
          BeanFactory factory = context;
-         BeanSpring miBean= (BeanSpring)factory.getBean("beanSpring");
-         System.out.println("mensaje: "+ miBean.getMensaje());
+       //BeanSpring miBean= (BeanSpring)factory.getBean("beanSpring");
+         BeanSpring miBean= (BeanSpring)context.getBean("beanSpring");
+         
+                 
+
+         System.out.println("Mensaje: "+ miBean.getMensaje());
+         ///bean con constructor 
+         Persona miBeanPersona= (Persona)factory.getBean("Juan");
+         System.out.println("Nombre bean: "+ miBeanPersona.getNombre()+ " fecha: "+ miBeanPersona.getFechaNaicmiento().toLocaleString());
+         //ejemplo objetos anidadis
+       /* Profesor profesor= (Profesor) factory.getBean("idProfesor");
+         System.out.println("Profesor nombre: "+ profesor.getNombre());
+         System.out.println("Profesor academia: "+ profesor.getAcademia().getNombre());
+         System.out.println("Profesor ciudad: "+ profesor.getAcademia().getCiudad().getNombre());*/
+          /// traer la ciudad con la lista de academias
+          SLCiudad miBeanCiudadLista= (SLCiudad)factory.getBean("idListaCiudad");
+          for (SLAcademia obj :miBeanCiudadLista.getListAcademia() ) {
+             
+                      System.out.println("Academia lista: "+ obj.getNombre());
+
+         }
+          
+
      }
                  
 }

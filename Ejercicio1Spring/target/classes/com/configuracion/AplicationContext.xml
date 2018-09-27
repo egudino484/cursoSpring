@@ -7,8 +7,78 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 ">
+    <!--ejemplo simple -->
     <bean id="beanSpring" class="com.spring.BeanSpring">        
         <property name="mensaje" value="Configuracion de spring"/>
     </bean>
+    <!--ejemplo constructores -->
+    <bean id="Juan" class="com.spring.Persona">  
+        <constructor-arg type="Date" value="2010/02/24"/><!-- tambien se puede llamar sin el tipo de dato pero debe ser deacuerdo al orden del constructor<constructor-arg  value="2010/02/24"/> -->
+        <constructor-arg type="String" value="Juan"/>
+        <constructor-arg type="int" value="22"/>
 
+    </bean>
+    
+    <!--ejemplo de objetos anidados -->    
+    <!--<bean id="idCiudad" class="com.spring.objetos.Ciudad">  
+        <property name="nombre" value="Quito"/>
+    </bean>
+    <bean id="idAcademia" class="com.spring.objetos.Academia">  
+        <property name="nombre" value="Academia de ciencias"/>
+        <property name="ciudad" ref="idCiudad"/>
+
+    </bean>
+    <bean id="idProfesor" class="com.spring.objetos.Profesor">  
+        <property name="nombre" value="Pedro"/>
+        <property name="academia" ref="idAcademia"/>
+    </bean>-->
+    
+    <!--ejemplo de objetos anidados 2 -->    
+
+    <!--<bean id="idAcademia" class="com.spring.objetos.Academia">  
+        <property name="nombre" value="Academia de ciencias"/>
+        <property name="ciudad" >            
+            <bean id="idCiudad" class="com.spring.objetos.Ciudad">  
+                <property name="nombre" value="Quito"/>
+            </bean>
+        </property>
+
+    </bean>
+    <bean id="idProfesor" class="com.spring.objetos.Profesor">  
+        <property name="nombre" value="Pedro"/>
+        <property name="academia" >
+            
+            <bean id="idAcademia" class="com.spring.objetos.Academia">  
+                <property name="nombre" value="Academia de ciencias"/>
+                <property name="ciudad" >            
+                    <bean id="idCiudad" class="com.spring.objetos.Ciudad">  
+                        <property name="nombre" value="Quito"/>
+                    </bean>
+                </property>
+
+            </bean>
+        </property>
+    </bean>-->
+    <!-- ejemplo de listas -->
+    <bean id="idListaCiudad" class="com.spring.listas.SLCiudad">  
+        <property name="nombre" value="Quito"/>
+        <property name="listAcademia">
+            <list>
+                <ref bean="academia1" />
+                <ref bean="academia2" />
+                <ref bean="academia3" />
+            </list>
+            
+        </property>
+    </bean>
+    
+    <bean id="academia1" class="com.spring.listas.SLAcademia">  
+        <property name="nombre" value="Academia 1"/>
+    </bean>
+    <bean id="academia2" class="com.spring.listas.SLAcademia">  
+        <property name="nombre" value="Academia 2"/>
+    </bean>
+    <bean id="academia3" class="com.spring.listas.SLAcademia">  
+        <property name="nombre" value="Academia 3"/>
+    </bean>
 </beans>
