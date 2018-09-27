@@ -2,18 +2,12 @@
 
 <ClassDiagram name="clases">
   <ClassDiagramComponents>
-    <Interface name="IFisica" package="" visibility="public" xPosition="226.0" yPosition="22.0">
-      <Methods/>
-    </Interface>
-    <Interface name="IInstructor" package="" visibility="public" xPosition="490.0" yPosition="22.0">
-      <Methods/>
-    </Interface>
     <Class name="ProfesorMatematicaFisica" package="" visibility="public" xPosition="384.0" yPosition="316.0">
       <Fields/>
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="MovimientoRectilineo" package="" visibility="public" xPosition="226.0" yPosition="164.0">
+    <Class name="MovimientoRectilineo" package="" visibility="public" xPosition="133.0" yPosition="181.0">
       <Fields/>
       <Constructors/>
       <Methods/>
@@ -23,11 +17,17 @@
       <Constructors/>
       <Methods/>
     </Class>
+    <Interface name="IFisica" package="" visibility="public" xPosition="226.0" yPosition="22.0">
+      <Methods/>
+    </Interface>
+    <Interface name="IInstructor" package="" visibility="public" xPosition="490.0" yPosition="22.0">
+      <Methods/>
+    </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <IsRelation name="" source="ProfesorMatematicaFisica" target="Profesor"/>
-    <UseRelation name="" source="ProfesorMatematicaFisica" target="IFisica" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="MovimientoRectilineo" target="IFisica"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Profesor" target="IInstructor"/>
+    <IsRelation name="is" source="ProfesorMatematicaFisica" target="Profesor"/>
+    <UseRelation name="" source="ProfesorMatematicaFisica" target="IFisica" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
