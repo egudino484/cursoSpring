@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="clases">
+  <ClassDiagramComponents>
+    <Interface name="IFisica" package="" visibility="public" xPosition="226.0" yPosition="22.0">
+      <Methods/>
+    </Interface>
+    <Interface name="IInstructor" package="" visibility="public" xPosition="490.0" yPosition="22.0">
+      <Methods/>
+    </Interface>
+    <Class name="ProfesorMatematicaFisica" package="" visibility="public" xPosition="384.0" yPosition="316.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="MovimientoRectilineo" package="" visibility="public" xPosition="226.0" yPosition="164.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Profesor" package="" visibility="public" xPosition="490.0" yPosition="164.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="" source="ProfesorMatematicaFisica" target="Profesor"/>
+    <UseRelation name="" source="ProfesorMatematicaFisica" target="IFisica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="MovimientoRectilineo" target="IFisica"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Profesor" target="IInstructor"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

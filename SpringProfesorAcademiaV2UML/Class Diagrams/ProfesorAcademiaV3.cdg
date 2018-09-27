@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="clases">
+  <ClassDiagramComponents>
+    <Class name="ProfesorMatematicaFisica" package="" visibility="public" xPosition="210.0" yPosition="323.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="MovimientoRectilineo" package="" visibility="public" xPosition="80.0" yPosition="164.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Profesor" package="" visibility="public" xPosition="332.0" yPosition="164.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="IFisica" package="" visibility="public" xPosition="226.0" yPosition="22.0">
+      <Methods/>
+    </Interface>
+    <Interface name="IInstructor" package="" visibility="public" xPosition="490.0" yPosition="22.0">
+      <Methods/>
+    </Interface>
+    <Class name="Investigador" package="" visibility="public" xPosition="544.0" yPosition="164.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="IConsejoInvestigacion" package="" visibility="public" xPosition="727.0" yPosition="24.0">
+      <Methods/>
+    </Interface>
+    <Class name="DepInvestigacion" package="" visibility="public" xPosition="727.0" yPosition="164.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="DepDisciplina" package="" visibility="public" xPosition="910.0" yPosition="164.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="ProfesorMatematicaFisica" target="IFisica" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Profesor" target="IInstructor"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="DepInvestigacion" target="IConsejoInvestigacion"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="DepDisciplina" target="IConsejoInvestigacion"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="MovimientoRectilineo" target="IFisica"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Investigador" target="IInstructor"/>
+    <IsRelation name="" source="ProfesorMatematicaFisica" target="Profesor"/>
+    <UseRelation name="" source="Investigador" target="IConsejoInvestigacion" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
