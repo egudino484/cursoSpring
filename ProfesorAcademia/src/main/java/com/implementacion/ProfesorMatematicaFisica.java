@@ -23,7 +23,7 @@ public class ProfesorMatematicaFisica  extends Profesor{
     }
     
     
-        public ProfesorMatematicaFisica(@Value("3") int numeroAsignaturas/*, IFisica iFisica*/) {
+        public ProfesorMatematicaFisica(@Value("3") int numeroAsignaturas, IFisica iFisica) {
         super(numeroAsignaturas);
        //this.iFisica = iFisica;
         
