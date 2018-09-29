@@ -12,30 +12,31 @@ http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop.xsd" 
 > 
    <context:component-scan base-package="com.implementaciones"/>
-   <aop:config>
+   <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+<!--   <aop:config>
        <aop:aspect id="myAspect" ref="estudiante" >
            <aop:pointcut  expression="execution(public * com.implementaciones.Profesor.ejecutar(..))" id="clases"></aop:pointcut>
 
-           <!--aop afeter,before-->
+           aop afeter,before
             <aop:before  pointcut-ref="clases" method="sentarse"/>
             <aop:before  pointcut-ref="clases" method="apagarCelulares"/>
 
            <aop:after-returning  pointcut-ref="clases" method="realizarPreguntas"/>
            <aop:after-throwing  pointcut-ref="clases" method="salirDelAula"/>
-           <!--FIN aop afeter,before-->
+           FIN aop afeter,before
 
-           <!--<aop:pointcut  expression="execution(* com.implementaciones..*.*(..))" id="clases"></aop:pointcut>-->
-           <!-- se ejecutara solo los metodos publicos y que reciban un string -->
-           <!--<aop:pointcut  expression="execution(public * com.implementaciones..*.*(String,..))" id="clases"></aop:pointcut>-->
+           <aop:pointcut  expression="execution(* com.implementaciones..*.*(..))" id="clases"></aop:pointcut>
+            se ejecutara solo los metodos publicos y que reciban un string 
+           <aop:pointcut  expression="execution(public * com.implementaciones..*.*(String,..))" id="clases"></aop:pointcut>
            
-           <!-- se ejecutara solo los metodos publicos y que reciban un string -->
-           <!--<aop:pointcut  expression="execution(public * com.implementaciones..*.*(String,..))" id="clases"></aop:pointcut>-->
+            se ejecutara solo los metodos publicos y que reciban un string 
+           <aop:pointcut  expression="execution(public * com.implementaciones..*.*(String,..))" id="clases"></aop:pointcut>
            
-           <!-- se ejecutara solo los metodos de la clase profesor -->
-           <!--<aop:pointcut  expression="execution(public * com.implementaciones.Profesor.ejecutar(..))" id="clases"></aop:pointcut>-->
+            se ejecutara solo los metodos de la clase profesor 
+           <aop:pointcut  expression="execution(public * com.implementaciones.Profesor.ejecutar(..))" id="clases"></aop:pointcut>
 
-           <!--<aop:around  pointcut-ref="clases" method="monitorearClasesMatematica"></aop:around>-->
+           <aop:around  pointcut-ref="clases" method="monitorearClasesMatematica"></aop:around>
        </aop:aspect>
        
-   </aop:config>
+   </aop:config>-->
 </beans>

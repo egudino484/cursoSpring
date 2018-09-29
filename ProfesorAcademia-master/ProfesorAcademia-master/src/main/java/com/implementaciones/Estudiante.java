@@ -6,6 +6,9 @@
 package com.implementaciones;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,6 +16,7 @@ import org.springframework.stereotype.Component;
  * @author admin
  */
 @Component 
+@Aspect
 public class Estudiante {
     
 
@@ -63,11 +67,13 @@ public class Estudiante {
 
 
     } 
-
-
+    @Pointcut ("execution( * com.implementaciones.Profesor.ejecutar(..))")
+    public  void impartirClases() {
+        
+    }
  
 
-
+    @Around("impartirClases()")
     public void monitorearClasesMatematica(ProceedingJoinPoint joinjPoint) { 
 
 
@@ -108,7 +114,7 @@ public class Estudiante {
 
 
 // ejecutar el otro proceso al que se hace referencia en el aplicaction context en este caso el ejecutar();
-joinjPoint.proceed(); //ejecutar el metodo interceptado solo cuando uso un around para interceptar 
+//joinjPoint.proceed(); //ejecutar el metodo interceptado solo cuando uso un around para interceptar 
 
         } catch (Throwable t) { 
 
@@ -120,7 +126,9 @@ joinjPoint.proceed(); //ejecutar el metodo interceptado solo cuando uso un aroun
  System.out.println("\n*******************************************");
 
 
-    } 
+    }
+    
+
 
 
  

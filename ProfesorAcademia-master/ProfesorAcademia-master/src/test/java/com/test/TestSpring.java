@@ -49,7 +49,7 @@ public class TestSpring {
     public void testProfesor() {
        logger.info("Inicio de enseñar matematica");
     
-        System.out.println("Hola mundo");
+        System.out.println("Hola mundo1");
         int asignaturas = 3;
         profesorMatematica.ejecutar();
         //comprobar si es igual por test 
