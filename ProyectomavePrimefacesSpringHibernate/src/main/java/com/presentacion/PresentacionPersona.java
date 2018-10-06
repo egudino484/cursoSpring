@@ -66,7 +66,7 @@ public class PresentacionPersona {
         }
         
     }
-public void limpiar(){
+public void reset(){
 
 this.setApellidos("");
 this.setNombres("");
