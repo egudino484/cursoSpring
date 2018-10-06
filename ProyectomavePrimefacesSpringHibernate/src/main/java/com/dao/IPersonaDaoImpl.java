@@ -37,22 +37,40 @@ public class IPersonaDaoImpl implements IPersonaDao {
 
     @Override
     public void agregarPersona(Persona persona) {
+        try {
+                    getSessionFactory().getCurrentSession().save(persona);
+
+        } catch (Exception e) {
+              System.err.println("error"+ e.getMessage() );
+            
+        }
         
     }
 
     @Override
     public void modificarPersona(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        try {
+                    getSessionFactory().getCurrentSession().update(persona);
+
+        } catch (Exception e) {
+              System.err.println("error"+ e.getMessage() );
+            
+        }    }
 
     @Override
     public void eliminarPersona(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        try {
+                    getSessionFactory().getCurrentSession().delete(persona);
+
+        } catch (Exception e) {
+              System.err.println("error"+ e.getMessage() );
+            
+        }    }
 
     @Override
     public long contadorPersonas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List list = getSessionFactory().getCurrentSession().createQuery("from Persona").list();
+        return list.size();
     }
 
     public SessionFactory getSessionFactory() {

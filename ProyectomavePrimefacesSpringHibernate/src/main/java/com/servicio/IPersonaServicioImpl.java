@@ -3,31 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dao;
+package com.servicio;
 
 import java.util.List;
+import com.dao.IPersonaDao;
 import com.modelo.Persona;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-@Repository
-public class IPersonaDaoImpl implements IPersonaDao {
+@Service("IPersonaServicioImpl")
+@Transactional(readOnly = true)
+public class IPersonaServicioImpl implements IPersonaServicio {
 
     @Autowired
-    private SessionFactory sessionFactory;
+    IPersonaDao IPersonaDao;
+
+    @Override
+    public List<Persona> listarPersonas() {
+        return getIPersonaDao().listarPersonas();
+    }
 
     @Override
     public Persona recuperarPersonaPorId(int idPersona) {
-        try {
-            Object obj= sessionFactory.getCurrentSession().createQuery("select obj from persona obj where obj.idPersona="+idPersona).uniqueResult();
-            return  (Persona) obj;
-        } catch (Exception e) {
-            System.err.println("error"+ e.getMessage() );
-            return null;
-            
-        }
-
+return getIPersonaDao().recuperarPersonaPorId(idPersona);  
     }
 
     @Override
@@ -36,8 +35,9 @@ public class IPersonaDaoImpl implements IPersonaDao {
     }
 
     @Override
+    @Transactional
     public void agregarPersona(Persona persona) {
-        
+        getIPersonaDao().agregarPersona(persona);
     }
 
     @Override
@@ -55,18 +55,12 @@ public class IPersonaDaoImpl implements IPersonaDao {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public SessionFactory getSessionFactory() {
-        return sessionFactory;
+    public IPersonaDao getIPersonaDao() {
+        return IPersonaDao;
     }
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
-    @Override
-    public List<Persona> listarPersonas() {
-        List list = getSessionFactory().getCurrentSession().createQuery("from Persona").list();
-        return list;
+    public void setIPersonaDao(IPersonaDao IPersonaDao) {
+        this.IPersonaDao = IPersonaDao;
     }
 
 }
