@@ -8,13 +8,13 @@
             <table>
                 <tr>
                     <td><h:outputLabel for="id" value="Id : " /></td>
-                    <td><p:inputText id="id" value="#{PresentacionPersona.idPersona}">
+                    <td><p:inputText id="id" value="#{presentacionPersona.idPersona}">
                         </p:inputText>
                     </td>
                 </tr>
                 <tr>
                     <td><h:outputLabel for="nombres" value="Nombre : " /></td>
-                    <td><p:inputText id="nombres" value="#{PresentacionPersona.nombres}">
+                    <td><p:inputText id="nombres" value="#{presentacionPersona.nombres}">
 
                         </p:inputText>
                         <p:message id="nameMsg" for="nombres" display="icon"/>
@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                     <td><h:outputLabel for="surname" value="Apellido : " /></td>
-                    <td><p:inputText id="surname" value="#{PresentacionPersona.apellidos}">
+                    <td><p:inputText id="surname" value="#{presentacionPersona.apellidos}">
 
                         </p:inputText>
                         <p:message id="surnameMsg" for="surname" display="icon"/>
@@ -30,19 +30,19 @@
                 </tr>
                 <tr>
                     <td><h:outputLabel for="direccion" value="Direccion : " /></td>
-                    <td><p:inputText id="direccion" value="#{PresentacionPersona.direccionDomicilio}">
+                    <td><p:inputText id="direccion" value="#{presentacionPersona.direccionDomicilio}">
 
                         </p:inputText>
                         <p:message id="direccionMsg" for="direccion" display="icon"/>
                     </td>
                 </tr>
                 <tr>
-                    <td><p:commandButton id="idGuarda" value="GUARDAR" action="#{PresentacionPersona.guardarPersona}" ajax="false"/></td>
-                    <td><p:commandButton id="idBusca" value="BUSCAR" action="#{PresentacionPersona.buscar}" ajax="false" update="IdForm"/></td>
-                    <td><p:commandButton id="idElimina" value="ELIMINAR" action="#{PresentacionPersona.eliminarPersona}" ajax="false"/></td>
-                    <td><p:commandButton id="idActualiza" value="ACTUALIZAR" action="#{PresentacionPersona.actualizarPersona}" ajax="false"/></td>
-                    <td><p:commandButton id="idLista" value="LISTAR PERSONAS" action="#{PresentacionPersona.listar}" ajax="false"/></td>
-                    <td><p:commandButton id="idBorra" value="BORRAR" action="#{PresentacionPersona.reset}" ajax="false"/></td>
+                    <td><p:commandButton id="idGuarda" value="GUARDAR" action="#{presentacionPersona.guardarPersona}" ajax="false"/></td>
+                    <td><p:commandButton id="idBusca" value="BUSCAR" action="#{presentacionPersona.buscar}" ajax="false" update="IdForm"/></td>
+                    <td><p:commandButton id="idElimina" value="ELIMINAR" action="#{presentacionPersona.eliminarPersona}" ajax="false"/></td>
+                    <td><p:commandButton id="idActualiza" value="ACTUALIZAR" action="#{presentacionPersona.actualizarPersona}" ajax="false"/></td>
+                    <td><p:commandButton id="idLista" value="LISTAR PERSONAS" action="#{presentacionPersona.listar}" ajax="false"/></td>
+                    <td><p:commandButton id="idBorra" value="BORRAR" action="#{presentacionPersona.reset}" ajax="false"/></td>
                 </tr>
             </table>
         </h:form>
